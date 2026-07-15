@@ -30,7 +30,7 @@ Rather than utilizing standard flat scripting, this project implements a strict 
            ┌──────────────────────┐  ┌──────────────────────┐
            │    MySQL Engine      │  │    SQLite Engine     │
            └──────────────────────┘  └──────────────────────┘
-'''
+```
 
 ## 🧩 Layer Breakdowns
 * **presentation_layer** | Interfaces with the end-user, managing input validations and output formatting completely decoupled from any business logic.
@@ -70,17 +70,17 @@ Rather than utilizing standard flat scripting, this project implements a strict 
 
 ### Local Development
 1. Clone the repository:
-  '''bash
+```bash
   git clone https://github.com/liamprogulske/IT566-Campaigns-Framework.git
   cd IT566-Campaigns-Framework
-
+```
 2. Establish and activate a local virtual environment:
-  '''bash
+```bash
   python -m venv venv
   # On Windows (PowerShell):
   .\venv\Scripts\activate
   # On macOS/Linux:
   source venv/bin/activate
-
+```
 3. Execution:
 Configure your target database credentials within the /app_framework/config module, and execute the primary runtime bootstrapper file to launch the interface environment.
