@@ -30,7 +30,7 @@ Rather than utilizing standard flat scripting, this project implements a strict 
            ┌──────────────────────┐  ┌──────────────────────┐
            │    MySQL Engine      │  │    SQLite Engine     │
            └──────────────────────┘  └──────────────────────┘
-'''text
+'''
 
 ## 🧩 Layer Breakdowns
 * **presentation_layer** | Interfaces with the end-user, managing input validations and output formatting completely decoupled from any business logic.
