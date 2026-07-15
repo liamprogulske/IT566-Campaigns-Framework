@@ -31,55 +31,55 @@ Rather than utilizing standard flat scripting, this project implements a strict 
            │    MySQL Engine      │  │    SQLite Engine     │
            └──────────────────────┘  └──────────────────────┘
 
-🧩 Layer Breakdowns
-  presentation_layer | Interfaces with the end-user, managing input validations and output formatting completely decoupled from any business logic.
+## 🧩 Layer Breakdowns
+* **presentation_layer** | Interfaces with the end-user, managing input validations and output formatting completely decoupled from any business logic.
 
-  service_layer | Orchestrates execution flows, handling transactions and acting as the secure boundary between the outer client and internal logic.
+* **service_layer** | Orchestrates execution flows, handling transactions and acting as the secure boundary between the outer client and internal logic.
 
-  business_layer / domain | Houses pure, framework-agnostic business logic, validation rules, and core domain state modeling.
+* **business_layer** / domain | Houses pure, framework-agnostic business logic, validation rules, and core domain state modeling.
 
-  data_layer / persistence_layer | Implements modular data access object (DAO) and repository design patterns, abstracting raw database engines away from execution layers.
+* **data_layer** / **persistence_layer** | Implements modular data access object (DAO) and repository design patterns, abstracting raw database engines away from execution layers.
 
-🚀 Key Engineering Solutions & Patterns
-  Dual-Engine Database Portability: Features an abstract data layer allowing seamless data mapping and runtime execution swapping between local lightweight storage (SQLite) and enterprise-scale relational engines (MySQL).
+## 🚀 Key Engineering Solutions & Patterns
+* **Dual-Engine Database Portability:** Features an abstract data layer allowing seamless data mapping and runtime execution swapping between local lightweight storage (SQLite) and enterprise-scale relational engines (MySQL).
   
-  Domain-Driven Design (DDD): Isolates core business domain logic from data structures and presentation interfaces, guaranteeing that database migrations or UI redesigns require zero structural changes to underlying business code.
+* **Domain-Driven Design (DDD):** Isolates core business domain logic from data structures and presentation interfaces, guaranteeing that database migrations or UI redesigns require zero structural changes to underlying business code.
   
-  Config-Driven Application Bootstrapping: Implements a decoupled configurations management pipeline within /config, loading environment profiles dynamically rather than hardcoding systemic parameters.
+* **Config-Driven Application Bootstrapping:** Implements a decoupled configurations management pipeline within /config, loading environment profiles dynamically rather than hardcoding systemic parameters.
 
-🛠️ Tech Stack
-  Core Language: Python 3.x
-  
-  Database Drivers: MySQL Connector, native sqlite3 driver
-  
-  Architecture Style: Layered n-Tier / Domain-Driven Design (DDD)
+## 🛠️ Tech Stack
+* **Core Language:** Python 3.x
+* **Database Drivers:** MySQL Connector, native sqlite3 driver
+* **Architecture Style:** Layered n-Tier / Domain-Driven Design (DDD)
 
-📂 Repository Layout
-  /app_framework — Main application framework package wrapper.
+## 📂 Repository Layout
+*'/app_framework': Main application framework package wrapper.
   
-  /config — Bootloader initializations, parameters parsing, and environment setup files.
+* '/config': Bootloader initializations, parameters parsing, and environment setup files.
   
-  /database — Storage subsystem holding raw data scripts, initialization engines, and driver factories for MySQL and SQLite.
+* '/database': Storage subsystem holding raw data scripts, initialization engines, and driver factories for MySQL and SQLite.
   
-  /src/Campaigns_and_Channels — Core business logic partitioned cleanly into independent architectural layers (business_layer, data_layer, domain, persistence_layer, presentation_layer, service_layer).
+* '/src/Campaigns_and_Channels': Core business logic partitioned cleanly into independent architectural layers ('business_layer', 'data_layer', 'domain', 'persistence_layer', 'presentation_layer', 'service_layer').
 
-⚙️ Setup & Installation
-  Prerequisites
+## ⚙️ Setup & Installation
+
+### Prerequisites
   Python 3.8+
-  
   (Optional) Local MySQL Server instance
 
-Local Development
+### Local Development
 1. Clone the repository:
-git clone https://github.com/liamprogulske/IT566-Campaigns-Framework.git
-cd IT566-Campaigns-Framework
+  '''bash
+  git clone https://github.com/liamprogulske/IT566-Campaigns-Framework.git
+  cd IT566-Campaigns-Framework
 
 2. Establish and activate a local virtual environment:
-python -m venv venv
-# On Windows (PowerShell):
-.\venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
+  '''bash
+  python -m venv venv
+  # On Windows (PowerShell):
+  .\venv\Scripts\activate
+  # On macOS/Linux:
+  source venv/bin/activate
 
 3. Execution:
 Configure your target database credentials within the /app_framework/config module, and execute the primary runtime bootstrapper file to launch the interface environment.
