@@ -54,13 +54,13 @@ Rather than utilizing standard flat scripting, this project implements a strict 
 * **Architecture Style:** Layered n-Tier / Domain-Driven Design (DDD)
 
 ## 📂 Repository Layout
-*'/app_framework': Main application framework package wrapper.
+*`/app_framework`: Main application framework package wrapper.
   
-* '/config': Bootloader initializations, parameters parsing, and environment setup files.
+* `/config`: Bootloader initializations, parameters parsing, and environment setup files.
   
-* '/database': Storage subsystem holding raw data scripts, initialization engines, and driver factories for MySQL and SQLite.
+* `/database`: Storage subsystem holding raw data scripts, initialization engines, and driver factories for MySQL and SQLite.
   
-* '/src/Campaigns_and_Channels': Core business logic partitioned cleanly into independent architectural layers ('business_layer', 'data_layer', 'domain', 'persistence_layer', 'presentation_layer', 'service_layer').
+* `/src/Campaigns_and_Channels`: Core business logic partitioned cleanly into independent architectural layers (`business_layer`, `data_layer`, `domain`, `persistence_layer`, `presentation_layer`, `service_layer`).
 
 ## ⚙️ Setup & Installation
 
